@@ -1,0 +1,27 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Claude Code settings locaux
+.claude/settings.local.json
+
+# Anciens assets V3 non-utilisés (remplaces par .jpeg)
+V3/assets/logo.png
+V3/assets/favicon.png
+
+# Versions archivées (hors scope V3 livrée)
+V1/
+V2/
+prez-maxime.md
+
+# Assets non-utilisés par V3 — on ne garde que ce que V3/index.html référence
+assets/*
+!assets/1000026709-1-682x1024.jpg
+!assets/©-ROMAIN-BODEREAU_SL-PICKLEBALL-527-1-1024x683.jpg
+!assets/©-ROMAIN-BODEREAU_SL-PICKLEBALL-288-scaled-rk0v08mm8m3vxd4cdf1vo5huto2756i5b8uou58utw.jpg
