@@ -25,3 +25,9 @@ assets/*
 !assets/1000026709-1-682x1024.jpg
 !assets/©-ROMAIN-BODEREAU_SL-PICKLEBALL-527-1-1024x683.jpg
 !assets/©-ROMAIN-BODEREAU_SL-PICKLEBALL-288-scaled-rk0v08mm8m3vxd4cdf1vo5huto2756i5b8uou58utw.jpg
+.superpowers/
+
+# Workspace local — hors scope deploy
+docs/
+archives/
+
