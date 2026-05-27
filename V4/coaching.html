@@ -1,0 +1,1511 @@
+<!doctype html>
+<html lang="fr-FR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coaching pickleball &amp; tennis à Nice — Platel Corporation</title>
+    <meta
+      name="description"
+      content="Coaching pickleball &amp; tennis à Nice avec Julien Platel. Cours particuliers et stages collectifs, tous niveaux."
+    />
+    <meta name="theme-color" content="#AFD639" />
+    <meta
+      property="og:title"
+      content="Coaching pickleball &amp; tennis à Nice — Platel Corporation"
+    />
+    <meta
+      property="og:description"
+      content="Cours particuliers et stages collectifs avec Julien Platel, ancien joueur de tennis pro devenu pickleballeur de haut niveau."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <link rel="icon" type="image/png" href="assets/favicon.jpeg" />
+    <link rel="apple-touch-icon" href="assets/favicon.jpeg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700;800;900&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        /* Palette Platel Corporation */
+        --lime: #afd639;
+        --lime-hover: #aedb2b;
+        --lime-blend: #b7e349;
+        --lime-text: #4d7811; /* Lime sombre pour texte sur fond clair (ratio AA OK) */
+        --orange: #ec9937;
+        --orange-deep: #c97a1c;
+        --ink: #0f0f0f;
+        --ink-soft: #1c1c1c;
+        --text: #656565;
+        --text-light: #898989;
+        --paper: #f6f5f9;
+        --white: #ffffff;
+        --border: #e6e4e0;
+        --dark: #121212;
+
+        /* Typos */
+        --f-display: "Barlow Condensed", sans-serif;
+        --f-body: "DM Sans", sans-serif;
+        --f-edito:
+          "DM Sans", sans-serif; /* Italique éditorial signature (sans-serif) */
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: var(--f-body);
+        background: var(--paper);
+        color: var(--ink);
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      img {
+        display: block;
+        max-width: 100%;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        font-family: var(--f-display);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: -0.01em;
+        line-height: 1;
+      }
+
+      /* Accessibilité, focus clavier visible */
+      :focus {
+        outline: none;
+      }
+      a:focus-visible,
+      button:focus-visible,
+      .btn:focus-visible {
+        outline: 2px solid var(--lime);
+        outline-offset: 4px;
+        border-radius: 2px;
+      }
+
+      /* Screen-reader only, pour h1 sémantique masqué visuellement */
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      /* Italique éditorial signature (sans-serif DM Sans italic) */
+      .f-edito {
+        font-family: var(--f-edito);
+        font-style: italic;
+        font-weight: 400;
+        letter-spacing: 0;
+        text-transform: none;
+      }
+
+      /* ============ BANDEAU PROMO ============ */
+      .promo {
+        background: var(--ink);
+        color: var(--white);
+        padding: 12px 24px;
+        position: relative;
+        overflow: hidden;
+      }
+      .promo::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background: var(
+          --orange
+        ); /* Orange = signal urgence/promo, distinct du lime brand */
+      }
+      .promo-inner {
+        max-width: 1440px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 18px;
+        font-size: 13px;
+        letter-spacing: 0.04em;
+      }
+      .promo-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(
+          --orange
+        ); /* Orange pour distinguer urgence/promo du brand lime */
+        color: var(--ink);
+        font-family: var(--f-display);
+        font-weight: 700;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        padding: 5px 12px;
+        border-radius: 2px;
+      }
+      .promo-badge .dot {
+        width: 7px;
+        height: 7px;
+        background: var(--ink);
+        border-radius: 50%;
+        animation: pulse 1.6s ease-in-out infinite;
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.5;
+          transform: scale(0.8);
+        }
+      }
+      .promo-text {
+        color: var(--white);
+      }
+      .promo-text strong {
+        font-weight: 600;
+      }
+      .promo-link {
+        font-family: var(--f-display);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-size: 13px;
+        color: var(--lime);
+        border-bottom: 1px solid transparent;
+        padding-bottom: 2px;
+        transition: border-color 0.2s;
+      }
+      .promo-link:hover {
+        border-color: var(--lime);
+      }
+      .promo-link .arrow {
+        display: inline-block;
+        transition: transform 0.2s;
+        margin-left: 4px;
+      }
+      .promo-link:hover .arrow {
+        transform: translateX(3px);
+      }
+
+      /* ============ NAV ============ */
+      .nav {
+        background: var(--white);
+        border-bottom: 1px solid var(--border);
+        padding: 16px 24px;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        backdrop-filter: blur(10px);
+      }
+      .nav-inner {
+        max-width: 1440px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 0;
+      }
+      .logo-img {
+        height: 80px;
+        width: auto;
+        display: block;
+      }
+      .nav-cta {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        margin-left: auto;
+        margin-right: 24px;
+      }
+      .nav-links a {
+        font-family: var(--f-display);
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--ink);
+        text-decoration: none;
+        position: relative;
+        padding: 6px 0;
+        transition: color 0.2s;
+      }
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background: var(--lime);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.25s ease;
+      }
+      .nav-links a:hover {
+        color: var(--lime-text);
+      }
+      .nav-links a:hover::after {
+        transform: scaleX(1);
+      }
+
+      /* Hamburger (mobile) */
+      .nav-toggle {
+        display: none;
+        background: transparent;
+        border: 1.5px solid var(--ink);
+        border-radius: 2px;
+        width: 44px;
+        height: 44px;
+        cursor: pointer;
+        padding: 0;
+        position: relative;
+        transition:
+          background 0.2s,
+          border-color 0.2s;
+      }
+      .nav-toggle:hover {
+        background: var(--ink);
+      }
+      .nav-toggle:hover .nav-toggle-bar {
+        background: var(--lime);
+      }
+      .nav-toggle-bar {
+        position: absolute;
+        left: 11px;
+        right: 11px;
+        height: 2px;
+        background: var(--ink);
+        transition:
+          transform 0.25s,
+          opacity 0.2s,
+          top 0.25s,
+          background 0.2s;
+      }
+      .nav-toggle-bar:nth-child(1) {
+        top: 14px;
+      }
+      .nav-toggle-bar:nth-child(2) {
+        top: 21px;
+      }
+      .nav-toggle-bar:nth-child(3) {
+        top: 28px;
+      }
+      .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1) {
+        top: 21px;
+        transform: rotate(45deg);
+      }
+      .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2) {
+        opacity: 0;
+      }
+      .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3) {
+        top: 21px;
+        transform: rotate(-45deg);
+      }
+
+      /* Mobile dropdown menu */
+      .nav-mobile-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+        padding: 12px 24px 20px;
+        flex-direction: column;
+        gap: 4px;
+        z-index: 99;
+      }
+      .nav-mobile-menu.open {
+        display: flex;
+      }
+      .nav-mobile-link {
+        font-family: var(--f-display);
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--ink);
+        text-decoration: none;
+        padding: 16px 4px;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition:
+          color 0.2s,
+          padding-left 0.2s;
+      }
+      .nav-mobile-link:hover {
+        color: var(--lime-text);
+        padding-left: 8px;
+      }
+      .nav-mobile-link .arrow {
+        font-size: 14px;
+        opacity: 0.6;
+      }
+      .nav-mobile-link-diadem {
+        background: #008c95;
+        color: var(--white);
+        margin-left: -24px;
+        margin-right: -24px;
+        padding-left: 28px;
+        padding-right: 28px;
+        border-bottom: none;
+        margin-top: 8px;
+      }
+      .nav-mobile-link-diadem .arrow {
+        color: var(--white);
+        opacity: 1;
+      }
+      .nav-mobile-link-diadem:hover {
+        background: #006d74;
+        color: var(--white);
+        padding-left: 28px;
+      }
+      .nav-mobile-btn {
+        margin-top: 14px;
+        justify-content: center;
+        width: 100%;
+      }
+
+      /* ============ BUTTONS ============ */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 26px;
+        font-family: var(--f-display);
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        border: none;
+        cursor: pointer;
+        transition:
+          transform 0.2s,
+          background 0.2s,
+          color 0.2s;
+        border-radius: 2px;
+      }
+      .btn-lime {
+        background: var(--lime);
+        color: var(--ink);
+      }
+      .btn-lime:hover {
+        background: var(--ink);
+        color: var(--lime);
+        transform: translateY(-2px);
+      }
+      .btn-dark {
+        background: var(--ink);
+        color: var(--white);
+      }
+      .btn-dark:hover {
+        background: var(--lime);
+        color: var(--ink);
+        transform: translateY(-2px);
+      }
+      .btn-ghost {
+        background: transparent;
+        color: var(--ink);
+        border: 1.5px solid var(--ink);
+      }
+      .btn-ghost:hover {
+        background: var(--ink);
+        color: var(--white);
+      }
+      .btn-diadem {
+        background: #008c95;
+        color: var(--white);
+      }
+      .btn-diadem:hover {
+        background: #006d74;
+        color: var(--white);
+        transform: translateY(-2px);
+      }
+      .btn-ghost-light {
+        background: transparent;
+        color: var(--white);
+        border: 1.5px solid var(--white);
+      }
+      .btn-ghost-light:hover {
+        background: var(--white);
+        color: var(--ink);
+      }
+      .btn .arrow {
+        font-size: 18px;
+        transition: transform 0.2s;
+      }
+      .btn:hover .arrow {
+        transform: translateX(4px);
+      }
+
+      /* ============ HERO ============ */
+      .hero {
+        position: relative;
+        background: var(--ink);
+        color: var(--white);
+        padding: 120px 24px;
+        min-height: 70vh;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+      }
+      .hero-inner {
+        width: 100%;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: -200px;
+        right: -200px;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(circle, var(--lime) 0%, transparent 65%);
+        opacity: 0.32;
+        pointer-events: none;
+      }
+      .hero::after {
+        content: "";
+        position: absolute;
+        bottom: -100px;
+        left: 10%;
+        width: 380px;
+        height: 380px;
+        background: radial-gradient(circle, var(--orange) 0%, transparent 70%);
+        opacity: 0.22;
+        pointer-events: none;
+      }
+      .hero-inner {
+        max-width: 1440px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+      }
+      .hero-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 14px;
+        font-family: var(--f-display);
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--lime);
+        margin-bottom: 36px;
+      }
+      .hero-eyebrow::before {
+        content: "";
+        width: 48px;
+        height: 2px;
+        background: var(--lime);
+      }
+      .hero h1 {
+        font-family: var(--f-display);
+        font-weight: 800;
+        font-size: clamp(64px, 11vw, 180px);
+        line-height: 0.88;
+        letter-spacing: -0.015em;
+        text-transform: uppercase;
+        margin-bottom: 32px;
+      }
+      .hero h1 .accent {
+        color: var(--lime);
+        font-style: italic;
+      }
+      .hero-sub {
+        font-family: var(--f-body);
+        font-size: clamp(16px, 1.4vw, 20px);
+        color: var(--paper);
+        max-width: 620px;
+        margin-bottom: 48px;
+        line-height: 1.55;
+        opacity: 0.85;
+      }
+      .hero-cta {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin-bottom: 80px;
+      }
+
+      /* Hero, blocs services */
+      .hero-blocks {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin-bottom: 72px;
+        max-width: 980px;
+      }
+      .hero-blocks-solo {
+        margin: 0 auto;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+        max-width: 1320px;
+      }
+      .hero-blocks-solo .hero-block {
+        padding: 52px 36px 44px;
+        min-height: 340px;
+        justify-content: space-between;
+      }
+      .hero-blocks-solo .hero-block h2 {
+        font-size: clamp(32px, 3.2vw, 48px);
+      }
+      .hero-blocks-solo .hero-block p {
+        font-size: 16px;
+      }
+      .hero-blocks-solo .hero-block-arrow {
+        width: 48px;
+        height: 48px;
+        font-size: 20px;
+      }
+
+      /* ---- Variante DIADEM (3e bloc), accent teal Diadem ---- */
+      .hero-block-diadem::before {
+        background: #008c95 !important;
+      }
+      .hero-block-diadem .hero-block-num {
+        color: #2cc3cb;
+      }
+      .hero-block-diadem .hero-block-eyebrow {
+        font-family: var(--f-edito);
+        font-style: italic;
+        font-weight: 400;
+        font-size: 15px;
+        color: #2cc3cb;
+        letter-spacing: 0;
+        text-transform: none;
+        margin-top: -4px;
+        display: block;
+      }
+      .hero-block-diadem:hover {
+        background: rgba(0, 140, 149, 0.1) !important;
+        border-color: rgba(0, 140, 149, 0.45) !important;
+      }
+      .hero-block-diadem:hover .hero-block-arrow {
+        background: #008c95 !important;
+        border-color: #008c95 !important;
+        color: var(--white) !important;
+      }
+
+      /* ---- Variante PHOTO (bloc avec image de fond + overlay) ---- */
+      .hb-photo {
+        isolation: isolate;
+        border-color: rgba(255, 255, 255, 0.05) !important;
+      }
+      .hb-photo::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        background:
+          linear-gradient(
+            180deg,
+            rgba(15, 15, 15, 0.3) 0%,
+            rgba(15, 15, 15, 0.55) 55%,
+            rgba(15, 15, 15, 0.92) 100%
+          ),
+          var(--hb-photo) center/cover no-repeat;
+        transition: transform 0.6s ease;
+        pointer-events: none;
+      }
+      .hb-photo::before {
+        z-index: 2;
+      } /* lime bar par-dessus la photo */
+      .hb-photo > * {
+        position: relative;
+        z-index: 1;
+      }
+      .hb-photo:hover {
+        background: transparent !important;
+      }
+      .hb-photo:hover::after {
+        transform: scale(1.04);
+      }
+      .hb-photo .hero-block-num {
+        color: var(--white);
+      }
+      .hero-block-diadem.hb-photo .hero-block-num {
+        color: #2cc3cb;
+      } /* Conserve la signature teal Diadem même avec photo */
+      .hero-block {
+        position: relative;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        padding: 36px 32px 32px;
+        border-radius: 4px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        cursor: pointer;
+        transition:
+          background 0.3s,
+          border-color 0.3s,
+          transform 0.3s;
+        overflow: hidden;
+      }
+      .hero-block::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background: var(--lime);
+        transform: scaleY(0.3);
+        transform-origin: top;
+        transition: transform 0.35s;
+      }
+      .hero-block:hover {
+        background: rgba(175, 214, 57, 0.07);
+        border-color: rgba(175, 214, 57, 0.4);
+        transform: translateY(-4px);
+      }
+      .hero-block:hover::before {
+        transform: scaleY(1);
+      }
+      .hero-block-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+      .hero-block-num {
+        font-family: var(--f-display);
+        font-weight: 700;
+        font-size: 13px;
+        letter-spacing: 0.25em;
+        color: var(--lime);
+      }
+      .hero-block-arrow {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 1.5px solid rgba(255, 255, 255, 0.25);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        color: var(--white);
+        transition:
+          background 0.3s,
+          color 0.3s,
+          border-color 0.3s,
+          transform 0.3s;
+      }
+      .hero-block:hover .hero-block-arrow {
+        background: var(--lime);
+        color: var(--ink);
+        border-color: var(--lime);
+        transform: rotate(-45deg);
+      }
+      .hero-block h2 {
+        font-family: var(--f-display);
+        font-weight: 700;
+        font-size: clamp(28px, 3vw, 40px);
+        text-transform: uppercase;
+        color: var(--white);
+        letter-spacing: -0.005em;
+        line-height: 1;
+      }
+      .hero-block p {
+        font-family: var(--f-body);
+        font-size: 15px;
+        color: var(--paper);
+        opacity: 0.7;
+        line-height: 1.6;
+      }
+      .hero-stats {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 32px;
+        padding-top: 40px;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+      }
+      .stat-num {
+        font-family: var(--f-display);
+        font-weight: 700;
+        font-size: clamp(40px, 4vw, 64px);
+        line-height: 1;
+        color: var(--lime);
+        margin-bottom: 8px;
+      }
+      .stat-label {
+        font-family: var(--f-body);
+        font-size: 12px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--paper);
+        opacity: 0.7;
+      }
+
+      /* ============ INTRO ============ */
+      .intro {
+        background: var(--paper);
+        padding: 120px 24px;
+      }
+      .intro-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1.3fr;
+        gap: 80px;
+        align-items: center;
+      }
+      .intro-photo {
+        position: relative;
+        aspect-ratio: 4 / 5;
+        background-size: cover;
+        background-position: center top;
+        background-repeat: no-repeat;
+        border-radius: 4px;
+        overflow: hidden;
+      }
+      .intro-photo::before {
+        /* Cadre offset lime, signature brand */
+        content: "";
+        position: absolute;
+        inset: 18px -18px -18px 18px;
+        border: 2px solid var(--lime);
+        border-radius: 4px;
+        z-index: -1;
+      }
+      .intro-text h2 {
+        margin-bottom: 36px;
+      }
+      .intro-tag {
+        font-family: var(--f-display);
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--lime);
+        margin-bottom: 20px;
+        display: inline-flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .intro-tag::before {
+        content: "";
+        width: 40px;
+        height: 2px;
+        background: var(--lime);
+      }
+      .intro h2 {
+        font-size: clamp(40px, 5vw, 72px);
+        margin-bottom: 0;
+      }
+      .intro h2 .lime {
+        color: var(--ink);
+        font-family: var(--f-edito);
+        font-style: italic;
+        font-weight: 500;
+        text-transform: none;
+        letter-spacing: -0.005em;
+        position: relative;
+        display: inline-block;
+        padding: 0 0.05em;
+      }
+      .intro h2 .lime::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0.08em;
+        height: 0.32em;
+        background: var(--lime);
+        z-index: -1;
+        opacity: 0.85;
+      }
+      .intro-body {
+        font-size: 17px;
+        color: var(--text);
+        line-height: 1.7;
+      }
+      .intro-body p + p {
+        margin-top: 18px;
+      }
+      .intro-body .sig {
+        font-family: var(--f-display);
+        font-weight: 600;
+        font-size: 18px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--ink);
+        margin-top: 28px;
+        display: block;
+      }
+
+      /* ============ CONTACT CTA ============ */
+      .contact-cta {
+        background: var(--ink);
+        color: var(--white);
+        padding: 140px 24px;
+        position: relative;
+        overflow: hidden;
+      }
+      .contact-cta::before {
+        content: "";
+        position: absolute;
+        right: -200px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 700px;
+        height: 700px;
+        border: 1.5px solid var(--lime);
+        border-radius: 50%;
+        opacity: 0.22;
+        pointer-events: none;
+      }
+      .contact-cta::after {
+        content: "";
+        position: absolute;
+        right: -100px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 500px;
+        height: 500px;
+        border: 1.5px solid var(--lime);
+        border-radius: 50%;
+        opacity: 0.14;
+        pointer-events: none;
+      }
+      .contact-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1.4fr 1fr;
+        gap: 80px;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+      }
+      .contact-tag {
+        font-family: var(--f-display);
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--lime);
+        margin-bottom: 24px;
+        display: inline-flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .contact-tag::before {
+        content: "";
+        width: 40px;
+        height: 2px;
+        background: var(--lime);
+      }
+      .contact-cta h2 {
+        font-size: clamp(48px, 6.5vw, 104px);
+        margin-bottom: 32px;
+        line-height: 0.92;
+      }
+      .contact-cta h2 .lime {
+        color: var(--lime);
+        font-style: italic;
+      }
+      .contact-text {
+        font-size: 18px;
+        color: var(--paper);
+        opacity: 0.78;
+        line-height: 1.6;
+        margin-bottom: 40px;
+        max-width: 540px;
+      }
+      .contact-actions {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+        border-left: 2px solid var(--lime);
+        padding-left: 36px;
+      }
+      .contact-info-item {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .contact-info-label {
+        font-family: var(--f-display);
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--lime);
+      }
+      .contact-info-value {
+        font-family: var(--f-body);
+        font-size: 17px;
+        font-weight: 500;
+        color: var(--white);
+      }
+      .contact-info-value a:hover {
+        color: var(--lime);
+      }
+
+      /* ============ FOOTER ============ */
+      .footer {
+        background: var(--dark);
+        color: var(--paper);
+        padding: 80px 24px 32px;
+      }
+      .footer-inner {
+        max-width: 1440px;
+        margin: 0 auto;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.6fr 1fr 1fr 1fr;
+        gap: 60px;
+        padding-bottom: 60px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .footer-brand .logo-img {
+        height: 88px;
+        width: auto;
+        margin-bottom: 24px;
+        background: var(--white);
+        padding: 6px;
+        border-radius: 6px;
+      }
+      .footer-tagline {
+        font-family: var(--f-display);
+        font-size: 17px;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        line-height: 1.4;
+        margin-bottom: 20px;
+        color: var(--white);
+      }
+      .footer-desc {
+        font-size: 14px;
+        color: var(--text-light);
+        line-height: 1.6;
+        max-width: 360px;
+      }
+      .footer-col h4 {
+        font-family: var(--f-display);
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        color: var(--lime);
+        margin-bottom: 20px;
+      }
+      .footer-col ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .footer-col a {
+        font-size: 14px;
+        color: var(--paper);
+        opacity: 0.88; /* Avant 0.7, ratio AA OK sur dark */
+        transition:
+          color 0.2s,
+          opacity 0.2s;
+      }
+      .footer-col a:hover {
+        color: var(--lime);
+        opacity: 1;
+      }
+      .footer-col li.muted span {
+        font-size: 14px;
+        color: var(--paper);
+        opacity: 0.45;
+        font-style: italic;
+      }
+      .footer-col li.muted::after {
+        content: " · bientôt";
+        font-size: 11px;
+        color: var(--lime-text);
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        opacity: 0.7;
+      }
+      .footer-bottom {
+        padding-top: 28px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 16px;
+        font-size: 12px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--text-light);
+      }
+      .footer-bottom .socials {
+        display: flex;
+        gap: 24px;
+      }
+      .footer-bottom .socials a:hover {
+        color: var(--lime);
+      }
+
+      /* ============ RESPONSIVE ============ */
+      @media (max-width: 1024px) {
+        .intro-inner {
+          grid-template-columns: 1fr;
+          gap: 50px;
+        }
+        .intro-photo {
+          max-width: 480px;
+          margin: 0 auto;
+        }
+        .intro-photo::before {
+          inset: 14px -14px -14px 14px;
+        }
+        .contact-inner {
+          grid-template-columns: 1fr;
+          gap: 50px;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 40px;
+        }
+        .hero-stats {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 28px;
+        }
+        .hero-blocks-solo {
+          grid-template-columns: 1fr;
+          max-width: 620px;
+          gap: 18px;
+        }
+        .hero-blocks-solo .hero-block {
+          min-height: 220px;
+          padding: 36px 32px 32px;
+        }
+      }
+      @media (max-width: 900px) {
+        .nav-cta .btn {
+          padding: 11px 18px;
+          font-size: 13px;
+          letter-spacing: 0.08em;
+        }
+        .nav-cta {
+          gap: 10px;
+        }
+        .nav-links {
+          display: none;
+        } /* Liens texte planqués sur tablette/mobile */
+        .nav-cta-diadem {
+          display: none;
+        } /* Diadem bascule dans le menu déroulant */
+        .nav-toggle {
+          display: block;
+        } /* Hamburger visible */
+      }
+      @media (max-width: 720px) {
+        .promo-inner {
+          flex-direction: column;
+          gap: 6px;
+          text-align: center;
+          font-size: 12px;
+          padding: 4px 0;
+        }
+        .promo-badge {
+          font-size: 11px;
+          padding: 4px 10px;
+        }
+        .hero-blocks {
+          grid-template-columns: 1fr;
+        }
+        .hero-blocks-solo .hero-block {
+          padding: 40px 28px 36px;
+          min-height: 220px;
+        }
+        .nav-cta .btn {
+          padding: 9px 12px;
+          font-size: 12px;
+        }
+        .nav-cta .btn .arrow {
+          display: none;
+        } /* Gagne de la place sur mobile */
+        .hide-sm {
+          display: none;
+        } /* Raccourcit "Produits Diadem" → "Diadem" */
+        .hero {
+          padding: 60px 24px 50px;
+        }
+        .hero-stats {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 24px;
+        }
+        .intro,
+        .contact-cta {
+          padding: 80px 24px;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+        .logo-img {
+          height: 56px;
+        }
+      }
+
+      /* ============ REDUCED MOTION ============ */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+        html {
+          scroll-behavior: auto;
+        }
+        .reveal {
+          opacity: 1;
+          transform: none;
+        }
+      }
+
+      /* ============ REVEAL ============ */
+      .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition:
+          opacity 0.8s,
+          transform 0.8s;
+      }
+      .reveal.in {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ===== BANDEAU PROMO ===== -->
+    <!-- TODO Julien : confirmer date exacte du séjour + statut "dernière place" -->
+    <div class="promo">
+      <div class="promo-inner">
+        <span class="promo-badge"
+          ><span class="dot" aria-hidden="true"></span>Dernière place</span
+        >
+        <span class="promo-text"
+          ><strong>Séjour pickleball</strong> · 30 juin 2026 ·
+          <span class="f-edito">Côte d'Azur</span></span
+        >
+        <a href="contact.html" class="promo-link"
+          >Réserver<span class="arrow" aria-hidden="true">→</span></a
+        >
+      </div>
+    </div>
+
+    <!-- ===== NAV ===== -->
+    <nav class="nav" aria-label="Navigation principale">
+      <div class="nav-inner">
+        <a
+          href="index.html"
+          class="logo"
+          aria-label="Platel Corporation, accueil"
+        >
+          <img src="assets/logo-platel-corp-new.jpeg" alt="" class="logo-img" />
+        </a>
+        <div class="nav-links">
+          <a href="index.html">Accueil</a>
+          <a href="coaching.html" aria-current="page">Coachings</a>
+          <a href="evenements.html">Organisation d'événements</a>
+        </div>
+        <div class="nav-cta">
+          <a
+            href="https://diademsports.com"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-diadem nav-cta-diadem"
+            ><span class="hide-sm">Produits </span>Diadem</a
+          >
+          <a href="contact.html" class="btn btn-lime"
+            >Contactez-nous <span class="arrow" aria-hidden="true">→</span></a
+          >
+          <button
+            type="button"
+            class="nav-toggle"
+            aria-controls="nav-mobile-menu"
+            aria-expanded="false"
+            aria-label="Ouvrir le menu"
+          >
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+      <div
+        id="nav-mobile-menu"
+        class="nav-mobile-menu"
+        aria-label="Menu mobile"
+      >
+        <a href="index.html" class="nav-mobile-link"
+          >Accueil <span class="arrow" aria-hidden="true">→</span></a
+        >
+        <a href="coaching.html" class="nav-mobile-link" aria-current="page"
+          >Coachings <span class="arrow" aria-hidden="true">→</span></a
+        >
+        <a href="evenements.html" class="nav-mobile-link"
+          >Organisation d'événements
+          <span class="arrow" aria-hidden="true">→</span></a
+        >
+        <a
+          href="https://diademsports.com"
+          target="_blank"
+          rel="noopener"
+          class="nav-mobile-link nav-mobile-link-diadem"
+          >Produits Diadem <span class="arrow" aria-hidden="true">→</span></a
+        >
+      </div>
+    </nav>
+
+    <main id="main">
+      <!-- ===== HERO LANDING (Task 3) ===== -->
+
+      <!-- ===== FORMULES (Task 4) ===== -->
+
+      <!-- ===== INTRO ===== -->
+      <section class="intro">
+        <div class="intro-inner">
+          <div
+            class="intro-photo"
+            role="img"
+            aria-label="Julien Platel, fondateur de Platel Corporation"
+            style="
+              background-image: url(&quot;../assets/%C2%A9-ROMAIN-BODEREAU_SL-PICKLEBALL-288-scaled-rk0v08mm8m3vxd4cdf1vo5huto2756i5b8uou58utw.jpg&quot;);
+            "
+          ></div>
+          <div class="intro-text">
+            <div class="intro-tag">À propos</div>
+            <h2>Une <span class="lime">passion</span>, plusieurs métiers.</h2>
+            <div class="intro-body">
+              <p>
+                Platel Corporation, c'est l'aventure de Julien Platel, ancien
+                joueur de tennis professionnel devenu pickleballeur de haut
+                niveau, basé à Nice et au service des joueurs de toute la
+                France.
+              </p>
+              <p>
+                Du coaching individuel à l'organisation d'événements premium, en
+                passant par la distribution exclusive des produits Diadem, on
+                construit un écosystème complet pour les passionnés exigeants.
+              </p>
+              <span class="sig">Julien Platel, Nice (06)</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== CONTACT CTA ===== -->
+      <section class="contact-cta" id="contact">
+        <div class="contact-inner">
+          <div>
+            <div class="contact-tag">Contact</div>
+            <h2>
+              On échange ?<br /><span class="lime">Quand vous voulez.</span>
+            </h2>
+            <p class="contact-text">
+              Un cours, un événement à organiser, un produit à choisir ?
+              Écris-nous, on répond sous 24h ouvrées.
+            </p>
+            <div class="contact-actions">
+              <a href="contact.html" class="btn btn-lime"
+                >Contactez-nous
+                <span class="arrow" aria-hidden="true">→</span></a
+              >
+            </div>
+          </div>
+          <div class="contact-info">
+            <div class="contact-info-item">
+              <span class="contact-info-label">Localisation</span>
+              <span class="contact-info-value"
+                >Nice · Côte d'Azur · France</span
+              >
+            </div>
+            <div class="contact-info-item">
+              <span class="contact-info-label">Email</span>
+              <span class="contact-info-value"
+                ><a href="mailto:platelcorporation@gmail.com"
+                  >platelcorporation@gmail.com</a
+                ></span
+              >
+            </div>
+            <div class="contact-info-item">
+              <span class="contact-info-label">Suivez-nous</span>
+              <span class="contact-info-value"
+                >Instagram · Facebook · YouTube</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <img
+              src="assets/logo-platel-corp-new.jpeg"
+              alt=""
+              class="logo-img"
+            />
+            <div class="footer-tagline">
+              Votre univers<br />pickleball &amp;
+              <span class="f-edito">tennis</span>.
+            </div>
+            <p class="footer-desc">
+              Coaching, événements et distribution Diadem France, basés à Nice,
+              actifs partout en France et Monaco.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>Nos univers</h4>
+            <ul>
+              <li><a href="#coaching">Coachings</a></li>
+              <li><a href="#evenements">Événements</a></li>
+              <li>
+                <a
+                  href="https://diademsports.com"
+                  target="_blank"
+                  rel="noopener"
+                  >Diadem France ↗</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Pratique</h4>
+            <ul>
+              <li><a href="#contact">Contact</a></li>
+              <li class="muted"><span>FAQ</span></li>
+              <li class="muted"><span>Tarifs</span></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Légal</h4>
+            <ul>
+              <!-- TODO : créer les pages avant mise en ligne (obligatoire RGPD/LCEN) -->
+              <li class="muted"><span>Mentions légales</span></li>
+              <li class="muted"><span>CGV</span></li>
+              <li class="muted"><span>Confidentialité</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 Platel Corporation · Tous droits réservés</span>
+          <div class="socials">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">YouTube</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Reveal on scroll
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("in");
+              observer.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.12 },
+      );
+      document
+        .querySelectorAll(".reveal")
+        .forEach((el) => observer.observe(el));
+
+      // Mobile nav toggle
+      const navToggle = document.querySelector(".nav-toggle");
+      const navMobileMenu = document.getElementById("nav-mobile-menu");
+      if (navToggle && navMobileMenu) {
+        const closeMenu = () => {
+          navToggle.setAttribute("aria-expanded", "false");
+          navToggle.setAttribute("aria-label", "Ouvrir le menu");
+          navMobileMenu.classList.remove("open");
+        };
+        const openMenu = () => {
+          navToggle.setAttribute("aria-expanded", "true");
+          navToggle.setAttribute("aria-label", "Fermer le menu");
+          navMobileMenu.classList.add("open");
+        };
+        navToggle.addEventListener("click", () => {
+          const expanded = navToggle.getAttribute("aria-expanded") === "true";
+          expanded ? closeMenu() : openMenu();
+        });
+        // Ferme en cliquant sur un lien
+        navMobileMenu
+          .querySelectorAll("a")
+          .forEach((a) => a.addEventListener("click", closeMenu));
+        // Ferme avec Escape
+        document.addEventListener("keydown", (e) => {
+          if (
+            e.key === "Escape" &&
+            navToggle.getAttribute("aria-expanded") === "true"
+          ) {
+            closeMenu();
+            navToggle.focus();
+          }
+        });
+        // Ferme automatiquement si on repasse en desktop
+        const mq = window.matchMedia("(min-width: 901px)");
+        mq.addEventListener("change", (e) => {
+          if (e.matches) closeMenu();
+        });
+      }
+    </script>
+  </body>
+</html>
