@@ -1099,6 +1099,104 @@
         color: var(--lime);
       }
 
+      /* ============ HERO LANDING (page dédiée) ============ */
+      .hero-landing {
+        position: relative;
+        min-height: 80vh;
+        display: flex;
+        align-items: flex-end;
+        overflow: hidden;
+        color: var(--white);
+        background: var(--ink);
+      }
+      .hero-landing .hero-bg {
+        position: absolute;
+        inset: 0;
+        background-image: var(--hero-photo, none);
+        background-size: cover;
+        background-position: center;
+        z-index: 0;
+      }
+      .hero-landing .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(15, 15, 15, 0.45) 0%,
+          rgba(15, 15, 15, 0.55) 60%,
+          rgba(15, 15, 15, 0.85) 100%
+        );
+        z-index: 1;
+      }
+      .hero-landing .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 80px 32px 64px;
+      }
+      .hero-landing .eyebrow {
+        display: inline-block;
+        font-family: var(--f-display);
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--lime);
+        margin-bottom: 16px;
+      }
+      .hero-landing .hero-title {
+        font-family: var(--f-display);
+        font-size: clamp(48px, 8vw, 96px);
+        font-weight: 800;
+        line-height: 0.92;
+        text-transform: uppercase;
+        letter-spacing: -0.01em;
+        margin: 0 0 20px;
+        max-width: 18ch;
+      }
+      .hero-landing .hero-title .f-edito {
+        color: var(--lime);
+      }
+      .hero-landing .hero-sub {
+        font-family: var(--f-body);
+        font-size: clamp(15px, 1.6vw, 18px);
+        color: rgba(255, 255, 255, 0.9);
+        max-width: 560px;
+        margin: 0 0 28px;
+        line-height: 1.5;
+      }
+      .hero-landing .hero-ctas {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      @media (max-width: 900px) {
+        .hero-landing {
+          min-height: 70vh;
+        }
+        .hero-landing .hero-content {
+          padding: 64px 24px 48px;
+        }
+      }
+      @media (max-width: 720px) {
+        .hero-landing .hero-title {
+          font-size: clamp(40px, 11vw, 64px);
+        }
+        .hero-landing .hero-ctas {
+          flex-direction: column;
+          align-items: stretch;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .hero-landing .hero-bg {
+          transition: none;
+        }
+      }
+
       /* ============ RESPONSIVE ============ */
       @media (max-width: 1024px) {
         .intro-inner {
@@ -1316,7 +1414,35 @@
     </nav>
 
     <main id="main">
-      <!-- ===== HERO LANDING (Task 3) ===== -->
+      <!-- ===== HERO LANDING ===== -->
+      <section class="hero-landing" aria-labelledby="hero-title">
+        <div
+          class="hero-bg"
+          style="
+            --hero-photo: url(&quot;../assets/1000026709-1-682x1024.jpg&quot;);
+          "
+        ></div>
+        <div class="hero-overlay" aria-hidden="true"></div>
+        <div class="hero-content">
+          <span class="eyebrow">Coaching · Pickleball &amp; Tennis</span>
+          <h1 id="hero-title" class="hero-title">
+            Progresse <span class="f-edito">vite</span>, à Nice.
+          </h1>
+          <p class="hero-sub">
+            Cours particuliers, stages collectifs, pickleball &amp; tennis. Tous
+            niveaux, à Nice et alentours.
+          </p>
+          <div class="hero-ctas">
+            <a href="contact.html" class="btn btn-lime"
+              >Réserver une session
+              <span class="arrow" aria-hidden="true">→</span></a
+            >
+            <a href="#formules" class="btn btn-ghost-light"
+              >Voir les formules</a
+            >
+          </div>
+        </div>
+      </section>
 
       <!-- ===== FORMULES (Task 4) ===== -->
 
