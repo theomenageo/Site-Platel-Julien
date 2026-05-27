@@ -284,6 +284,15 @@
       .nav-links a:hover::after {
         transform: scaleX(1);
       }
+      .nav-links a[aria-current="page"] {
+        color: var(--lime-text);
+      }
+      .nav-links a[aria-current="page"]::after {
+        transform: scaleX(1);
+      }
+      .nav-mobile-link[aria-current="page"] {
+        color: var(--lime-text);
+      }
 
       /* Hamburger (mobile) */
       .nav-toggle {
