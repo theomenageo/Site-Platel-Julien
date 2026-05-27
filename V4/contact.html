@@ -3,19 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Platel Corporation, Coaching · Événements · Diadem France</title>
+    <title>Contact, Platel Corporation</title>
     <meta
       name="description"
-      content="Coaching pickleball à Nice, séjours premium Côte d'Azur, distributeur exclusif France &amp; Monaco des produits Diadem Sports."
+      content="Contactez Platel Corporation à Nice, coaching pickleball, séjours Côte d'Azur, distribution Diadem France."
     />
     <meta name="theme-color" content="#AFD639" />
-    <meta
-      property="og:title"
-      content="Platel Corporation, Coaching · Événements · Diadem France"
-    />
+    <meta property="og:title" content="Contact, Platel Corporation" />
     <meta
       property="og:description"
-      content="Une passion, plusieurs métiers. Coaching, séjours, et distribution Diadem France."
+      content="Une question, un projet, un partenariat ? Écrivez-nous, on répond sous 48h ouvrées."
     />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="fr_FR" />
@@ -33,7 +30,7 @@
         --lime: #afd639;
         --lime-hover: #aedb2b;
         --lime-blend: #b7e349;
-        --lime-text: #4d7811; /* Lime sombre pour texte sur fond clair (ratio AA OK) */
+        --lime-text: #4d7811;
         --orange: #ec9937;
         --orange-deep: #c97a1c;
         --ink: #0f0f0f;
@@ -48,8 +45,7 @@
         /* Typos */
         --f-display: "Barlow Condensed", sans-serif;
         --f-body: "DM Sans", sans-serif;
-        --f-edito:
-          "DM Sans", sans-serif; /* Italique éditorial signature (sans-serif) */
+        --f-edito: "DM Sans", sans-serif;
       }
 
       * {
@@ -88,19 +84,20 @@
         line-height: 1;
       }
 
-      /* Accessibilité, focus clavier visible */
       :focus {
         outline: none;
       }
       a:focus-visible,
       button:focus-visible,
+      input:focus-visible,
+      select:focus-visible,
+      textarea:focus-visible,
       .btn:focus-visible {
         outline: 2px solid var(--lime);
         outline-offset: 4px;
         border-radius: 2px;
       }
 
-      /* Screen-reader only, pour h1 sémantique masqué visuellement */
       .sr-only {
         position: absolute;
         width: 1px;
@@ -113,7 +110,6 @@
         border: 0;
       }
 
-      /* Italique éditorial signature (sans-serif DM Sans italic) */
       .f-edito {
         font-family: var(--f-edito);
         font-style: italic;
@@ -137,9 +133,7 @@
         top: 0;
         bottom: 0;
         width: 4px;
-        background: var(
-          --orange
-        ); /* Orange = signal urgence/promo, distinct du lime brand */
+        background: var(--orange);
       }
       .promo-inner {
         max-width: 1440px;
@@ -155,9 +149,7 @@
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        background: var(
-          --orange
-        ); /* Orange pour distinguer urgence/promo du brand lime */
+        background: var(--orange);
         color: var(--ink);
         font-family: var(--f-display);
         font-weight: 700;
@@ -284,6 +276,12 @@
       .nav-links a:hover::after {
         transform: scaleX(1);
       }
+      .nav-links a.active {
+        color: var(--lime-text);
+      }
+      .nav-links a.active::after {
+        transform: scaleX(1);
+      }
 
       /* Hamburger (mobile) */
       .nav-toggle {
@@ -339,7 +337,6 @@
         transform: rotate(-45deg);
       }
 
-      /* Mobile dropdown menu */
       .nav-mobile-menu {
         display: none;
         position: absolute;
@@ -377,6 +374,9 @@
       .nav-mobile-link:hover {
         color: var(--lime-text);
         padding-left: 8px;
+      }
+      .nav-mobile-link.active {
+        color: var(--lime-text);
       }
       .nav-mobile-link .arrow {
         font-size: 14px;
@@ -479,49 +479,74 @@
         transform: translateX(4px);
       }
 
-      /* ============ HERO ============ */
-      .hero {
-        position: relative;
+      /* ============ PAGE HEADER ============ */
+      .page-header {
         background: var(--ink);
         color: var(--white);
-        padding: 120px 24px;
-        min-height: 70vh;
-        display: flex;
-        align-items: center;
+        padding: 110px 24px 90px;
+        position: relative;
         overflow: hidden;
       }
-      .hero-inner {
-        width: 100%;
-      }
-      .hero::before {
-        content: "";
+      .page-header-bg {
         position: absolute;
-        top: -200px;
-        right: -200px;
-        width: 600px;
-        height: 600px;
-        background: radial-gradient(circle, var(--lime) 0%, transparent 65%);
-        opacity: 0.32;
-        pointer-events: none;
-      }
-      .hero::after {
-        content: "";
-        position: absolute;
-        bottom: -100px;
-        left: 10%;
-        width: 380px;
-        height: 380px;
-        background: radial-gradient(circle, var(--orange) 0%, transparent 70%);
+        inset: 0;
+        background-image: var(--ph-photo);
+        background-size: cover;
+        background-position: center;
         opacity: 0.22;
+        filter: contrast(1.05);
+      }
+      .page-header::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom, transparent 0%, var(--ink) 100%);
         pointer-events: none;
       }
-      .hero-inner {
+      .page-header::before {
+        content: "";
+        position: absolute;
+        top: -180px;
+        right: -180px;
+        width: 560px;
+        height: 560px;
+        background: radial-gradient(circle, var(--lime) 0%, transparent 65%);
+        opacity: 0.28;
+        pointer-events: none;
+        z-index: 1;
+      }
+      .page-header-inner {
         max-width: 1440px;
         margin: 0 auto;
         position: relative;
         z-index: 2;
       }
-      .hero-eyebrow {
+      .breadcrumb {
+        font-family: var(--f-display);
+        font-size: 12px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--lime);
+        margin-bottom: 32px;
+        font-weight: 600;
+      }
+      .breadcrumb a {
+        color: var(--paper);
+        opacity: 0.75;
+        transition:
+          opacity 0.2s,
+          color 0.2s;
+      }
+      .breadcrumb a:hover {
+        color: var(--lime);
+        opacity: 1;
+      }
+      .breadcrumb .sep {
+        margin: 0 12px;
+        color: var(--paper);
+        opacity: 0.4;
+      }
+      .page-eyebrow {
         display: inline-flex;
         align-items: center;
         gap: 14px;
@@ -531,321 +556,510 @@
         letter-spacing: 0.25em;
         text-transform: uppercase;
         color: var(--lime);
-        margin-bottom: 36px;
+        margin-bottom: 28px;
       }
-      .hero-eyebrow::before {
+      .page-eyebrow::before {
         content: "";
         width: 48px;
         height: 2px;
         background: var(--lime);
       }
-      .hero h1 {
+      .page-title {
         font-family: var(--f-display);
         font-weight: 800;
-        font-size: clamp(64px, 11vw, 180px);
+        font-size: clamp(64px, 11vw, 168px);
         line-height: 0.88;
         letter-spacing: -0.015em;
         text-transform: uppercase;
-        margin-bottom: 32px;
       }
-      .hero h1 .accent {
+      .page-title .accent {
         color: var(--lime);
-        font-style: italic;
-      }
-      .hero-sub {
-        font-family: var(--f-body);
-        font-size: clamp(16px, 1.4vw, 20px);
-        color: var(--paper);
-        max-width: 620px;
-        margin-bottom: 48px;
-        line-height: 1.55;
-        opacity: 0.85;
-      }
-      .hero-cta {
-        display: flex;
-        gap: 16px;
-        flex-wrap: wrap;
-        margin-bottom: 80px;
-      }
-
-      /* Hero, blocs services */
-      .hero-blocks {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-        margin-bottom: 72px;
-        max-width: 980px;
-      }
-      .hero-blocks-solo {
-        margin: 0 auto;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 22px;
-        max-width: 1320px;
-      }
-      .hero-blocks-solo .hero-block {
-        padding: 52px 36px 44px;
-        min-height: 340px;
-        justify-content: space-between;
-      }
-      .hero-blocks-solo .hero-block h2 {
-        font-size: clamp(32px, 3.2vw, 48px);
-      }
-      .hero-blocks-solo .hero-block p {
-        font-size: 16px;
-      }
-      .hero-blocks-solo .hero-block-arrow {
-        width: 48px;
-        height: 48px;
-        font-size: 20px;
-      }
-
-      /* ---- Variante DIADEM (3e bloc), accent teal Diadem ---- */
-      .hero-block-diadem::before {
-        background: #008c95 !important;
-      }
-      .hero-block-diadem .hero-block-num {
-        color: #2cc3cb;
-      }
-      .hero-block-diadem .hero-block-eyebrow {
         font-family: var(--f-edito);
         font-style: italic;
-        font-weight: 400;
-        font-size: 15px;
-        color: #2cc3cb;
-        letter-spacing: 0;
-        text-transform: none;
-        margin-top: -4px;
-        display: block;
+        font-weight: 500;
+        letter-spacing: -0.005em;
+        text-transform: uppercase;
       }
-      .hero-block-diadem:hover {
-        background: rgba(0, 140, 149, 0.1) !important;
-        border-color: rgba(0, 140, 149, 0.45) !important;
-      }
-      .hero-block-diadem:hover .hero-block-arrow {
-        background: #008c95 !important;
-        border-color: #008c95 !important;
-        color: var(--white) !important;
+      .page-lead {
+        font-family: var(--f-body);
+        font-size: clamp(16px, 1.4vw, 19px);
+        max-width: 640px;
+        margin-top: 32px;
+        color: var(--paper);
+        opacity: 0.82;
+        line-height: 1.6;
       }
 
-      /* ---- Variante PHOTO (bloc avec image de fond + overlay) ---- */
-      .hb-photo {
-        isolation: isolate;
-        border-color: rgba(255, 255, 255, 0.05) !important;
+      /* ============ CONTACT SECTION ============ */
+      .contact-section {
+        background: var(--paper);
+        padding: 110px 24px;
       }
-      .hb-photo::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        z-index: 0;
-        background:
-          linear-gradient(
-            180deg,
-            rgba(15, 15, 15, 0.3) 0%,
-            rgba(15, 15, 15, 0.55) 55%,
-            rgba(15, 15, 15, 0.92) 100%
-          ),
-          var(--hb-photo) center/cover no-repeat;
-        transition: transform 0.6s ease;
-        pointer-events: none;
+      .contact-grid {
+        max-width: 1320px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 80px;
+        align-items: start;
       }
-      .hb-photo::before {
-        z-index: 2;
-      } /* lime bar par-dessus la photo */
-      .hb-photo > * {
-        position: relative;
-        z-index: 1;
-      }
-      .hb-photo:hover {
-        background: transparent !important;
-      }
-      .hb-photo:hover::after {
-        transform: scale(1.04);
-      }
-      .hb-photo .hero-block-num {
-        color: var(--white);
-      }
-      .hero-block-diadem.hb-photo .hero-block-num {
-        color: #2cc3cb;
-      } /* Conserve la signature teal Diadem même avec photo */
-      .hero-block {
-        position: relative;
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(255, 255, 255, 0.14);
-        padding: 36px 32px 32px;
-        border-radius: 4px;
-        display: flex;
-        flex-direction: column;
-        gap: 14px;
-        cursor: pointer;
-        transition:
-          background 0.3s,
-          border-color 0.3s,
-          transform 0.3s;
-        overflow: hidden;
-      }
-      .hero-block::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        width: 3px;
-        background: var(--lime);
-        transform: scaleY(0.3);
-        transform-origin: top;
-        transition: transform 0.35s;
-      }
-      .hero-block:hover {
-        background: rgba(175, 214, 57, 0.07);
-        border-color: rgba(175, 214, 57, 0.4);
-        transform: translateY(-4px);
-      }
-      .hero-block:hover::before {
-        transform: scaleY(1);
-      }
-      .hero-block-head {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 16px;
-      }
-      .hero-block-num {
+
+      .contact-info-block .section-num {
         font-family: var(--f-display);
         font-weight: 700;
         font-size: 13px;
         letter-spacing: 0.25em;
         color: var(--lime);
-      }
-      .hero-block-arrow {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        border: 1.5px solid rgba(255, 255, 255, 0.25);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 18px;
-        color: var(--white);
-        transition:
-          background 0.3s,
-          color 0.3s,
-          border-color 0.3s,
-          transform 0.3s;
-      }
-      .hero-block:hover .hero-block-arrow {
-        background: var(--lime);
-        color: var(--ink);
-        border-color: var(--lime);
-        transform: rotate(-45deg);
-      }
-      .hero-block h2 {
-        font-family: var(--f-display);
-        font-weight: 700;
-        font-size: clamp(28px, 3vw, 40px);
-        text-transform: uppercase;
-        color: var(--white);
-        letter-spacing: -0.005em;
-        line-height: 1;
-      }
-      .hero-block p {
-        font-family: var(--f-body);
-        font-size: 15px;
-        color: var(--paper);
-        opacity: 0.7;
-        line-height: 1.6;
-      }
-      .hero-stats {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 32px;
-        padding-top: 40px;
-        border-top: 1px solid rgba(255, 255, 255, 0.15);
-      }
-      .stat-num {
-        font-family: var(--f-display);
-        font-weight: 700;
-        font-size: clamp(40px, 4vw, 64px);
-        line-height: 1;
-        color: var(--lime);
-        margin-bottom: 8px;
-      }
-      .stat-label {
-        font-family: var(--f-body);
-        font-size: 12px;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        color: var(--paper);
-        opacity: 0.7;
-      }
-
-      /* ============ INTRO ============ */
-      .intro {
-        background: var(--paper);
-        padding: 120px 24px;
-      }
-      .intro-inner {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: 1fr 1.3fr;
-        gap: 80px;
-        align-items: center;
-      }
-      .intro-photo {
-        position: relative;
-        aspect-ratio: 4 / 5;
-        background-size: cover;
-        background-position: center top;
-        background-repeat: no-repeat;
-        border-radius: 4px;
-        overflow: hidden;
-      }
-      .intro-photo::before {
-        /* Cadre offset lime, signature brand */
-        content: "";
-        position: absolute;
-        inset: 18px -18px -18px 18px;
-        border: 2px solid var(--lime);
-        border-radius: 4px;
-        z-index: -1;
-      }
-      .intro-text h2 {
-        margin-bottom: 36px;
-      }
-      .intro-tag {
-        font-family: var(--f-display);
-        font-size: 14px;
-        font-weight: 700;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        color: var(--lime);
-        margin-bottom: 20px;
+        margin-bottom: 18px;
         display: inline-flex;
         align-items: center;
         gap: 14px;
+        text-transform: uppercase;
       }
-      .intro-tag::before {
+      .contact-info-block .section-num::before {
         content: "";
         width: 40px;
         height: 2px;
         background: var(--lime);
       }
-      .intro h2 {
+      .contact-info-block h2 {
+        font-family: var(--f-display);
+        font-weight: 800;
         font-size: clamp(40px, 5vw, 72px);
-        margin-bottom: 0;
+        line-height: 0.95;
+        letter-spacing: -0.015em;
+        text-transform: uppercase;
+        margin-bottom: 24px;
       }
-      .intro h2 .lime {
+      .contact-info-block h2 .accent {
         color: var(--ink);
         font-family: var(--f-edito);
         font-style: italic;
         font-weight: 500;
         text-transform: none;
         letter-spacing: -0.005em;
+        display: inline-block;
+        padding: 0;
+        margin-left: -0.03em;
+      }
+      .contact-info-block .lead {
+        font-family: var(--f-body);
+        font-size: 17px;
+        color: var(--text);
+        line-height: 1.6;
+        margin-bottom: 40px;
+        max-width: 480px;
+      }
+
+      .contact-blocks {
+        display: flex;
+        flex-direction: column;
+        border-top: 1px solid var(--border);
+      }
+      .contact-block {
+        padding: 22px 0;
+        border-bottom: 1px solid var(--border);
+        display: grid;
+        grid-template-columns: 28px 1fr;
+        gap: 18px;
+        align-items: start;
+      }
+      .contact-block .icon {
+        width: 28px;
+        height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--ink);
+        background: var(--lime);
+        font-size: 14px;
+        border-radius: 50%;
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+      .contact-block .label {
+        font-family: var(--f-display);
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--text);
+        margin-bottom: 6px;
+      }
+      .contact-block .value {
+        font-family: var(--f-display);
+        font-weight: 700;
+        font-size: 22px;
+        letter-spacing: 0.005em;
+        text-transform: uppercase;
+        line-height: 1.15;
+        color: var(--ink);
+      }
+      .contact-block .value a {
+        transition: color 0.2s;
+      }
+      .contact-block .value a:hover {
+        color: var(--lime-text);
+      }
+      .contact-block .sub {
+        font-family: var(--f-body);
+        font-size: 14px;
+        color: var(--text-light);
+        margin-top: 6px;
+        line-height: 1.5;
+      }
+
+      .contact-socials {
+        margin-top: 40px;
+      }
+      .contact-socials .label {
+        font-family: var(--f-display);
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--text);
+        margin-bottom: 16px;
+      }
+      .contact-socials .links {
+        display: flex;
+        gap: 10px;
+      }
+      .contact-socials .links a {
+        min-width: 44px;
+        height: 44px;
+        padding: 0 14px;
+        border: 1.5px solid var(--border);
+        background: var(--white);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--f-display);
+        font-weight: 600;
+        font-size: 13px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--ink);
+        transition: all 0.2s;
+        border-radius: 2px;
+      }
+      .contact-socials .links a:hover {
+        background: var(--ink);
+        color: var(--lime);
+        border-color: var(--ink);
+        transform: translateY(-2px);
+      }
+
+      /* ============ FORM ============ */
+      .contact-form-wrap {
+        background: var(--ink);
+        color: var(--white);
+        padding: 56px 56px;
+        position: relative;
+        border-radius: 4px;
+        overflow: hidden;
+      }
+      .contact-form-wrap::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 80px;
+        height: 80px;
+        border-top: 2px solid var(--lime);
+        border-left: 2px solid var(--lime);
+        pointer-events: none;
+      }
+      .contact-form-wrap::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 80px;
+        height: 80px;
+        border-bottom: 2px solid var(--lime);
+        border-right: 2px solid var(--lime);
+        pointer-events: none;
+      }
+      .form-eyebrow {
+        font-family: var(--f-display);
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--lime);
+        margin-bottom: 18px;
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .form-eyebrow::before {
+        content: "";
+        width: 32px;
+        height: 2px;
+        background: var(--lime);
+      }
+      .form-title {
+        font-family: var(--f-display);
+        font-weight: 800;
+        font-size: clamp(36px, 4vw, 56px);
+        line-height: 0.95;
+        letter-spacing: -0.01em;
+        text-transform: uppercase;
+        margin-bottom: 36px;
+      }
+      .form-title .accent {
+        color: var(--lime);
+        font-family: var(--f-edito);
+        font-style: italic;
+        font-weight: 500;
+        letter-spacing: -0.005em;
+        text-transform: uppercase;
+      }
+
+      .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 26px;
+      }
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+      .form-field {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        position: relative;
+      }
+      .form-field label {
+        font-family: var(--f-display);
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--paper);
+        opacity: 0.7;
+      }
+      .form-field label .req {
+        color: var(--lime);
+        margin-left: 4px;
+      }
+      .form-field input,
+      .form-field select,
+      .form-field textarea {
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+        padding: 12px 0 14px;
+        color: var(--white);
+        font-family: var(--f-body);
+        font-size: 16px;
+        outline: none;
+        transition: border-color 0.2s;
+        width: 100%;
+        border-radius: 0;
+      }
+      .form-field input::placeholder,
+      .form-field textarea::placeholder {
+        color: rgba(255, 255, 255, 0.4);
+        font-family: var(--f-body);
+        font-style: italic;
+      }
+      .form-field input:focus,
+      .form-field select:focus,
+      .form-field textarea:focus {
+        border-color: var(--lime);
+      }
+      .form-field select {
+        appearance: none;
+        background-image:
+          linear-gradient(45deg, transparent 50%, var(--lime) 50%),
+          linear-gradient(135deg, var(--lime) 50%, transparent 50%);
+        background-position:
+          calc(100% - 12px) 22px,
+          calc(100% - 6px) 22px;
+        background-size:
+          6px 6px,
+          6px 6px;
+        background-repeat: no-repeat;
+        padding-right: 30px;
+        cursor: pointer;
+      }
+      .form-field select option {
+        background: var(--ink);
+        color: var(--white);
+      }
+      .form-field textarea {
+        resize: vertical;
+        min-height: 140px;
+        line-height: 1.5;
+      }
+
+      .form-consent {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+        font-size: 13px;
+        color: var(--paper);
+        opacity: 0.85;
+        line-height: 1.5;
+      }
+      .form-consent input[type="checkbox"] {
+        appearance: none;
+        width: 18px;
+        height: 18px;
+        border: 1.5px solid rgba(255, 255, 255, 0.4);
+        background: transparent;
+        cursor: pointer;
+        flex-shrink: 0;
+        margin-top: 2px;
+        position: relative;
+        transition: all 0.2s;
+        border-radius: 2px;
+      }
+      .form-consent input[type="checkbox"]:checked {
+        background: var(--lime);
+        border-color: var(--lime);
+      }
+      .form-consent input[type="checkbox"]:checked::after {
+        content: "✓";
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--ink);
+        font-size: 13px;
+        font-weight: bold;
+      }
+      .form-consent a {
+        color: var(--lime);
+        text-decoration: underline;
+        text-decoration-color: rgba(175, 214, 57, 0.4);
+        text-underline-offset: 3px;
+      }
+      .form-consent a:hover {
+        text-decoration-color: var(--lime);
+      }
+
+      .form-actions {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 12px;
+      }
+      .form-submit {
+        background: var(--lime);
+        color: var(--ink);
+        border: none;
+        padding: 16px 32px;
+        font-family: var(--f-display);
+        font-size: 15px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-weight: 700;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 14px;
+        transition: all 0.2s;
+        border-radius: 2px;
+      }
+      .form-submit:hover {
+        background: var(--white);
+        color: var(--ink);
+        transform: translateY(-2px);
+      }
+      .form-submit .arrow {
+        font-size: 18px;
+        transition: transform 0.2s;
+      }
+      .form-submit:hover .arrow {
+        transform: translateX(6px);
+      }
+      .form-note {
+        font-family: var(--f-body);
+        font-style: italic;
+        font-size: 13px;
+        color: var(--paper);
+        opacity: 0.7;
+      }
+
+      .form-success {
+        display: none;
+        padding: 28px;
+        background: rgba(175, 214, 57, 0.12);
+        border: 1px solid var(--lime);
+        color: var(--lime);
+        font-family: var(--f-body);
+        font-size: 16px;
+        text-align: center;
+        border-radius: 2px;
+        line-height: 1.5;
+      }
+      .form-success.visible {
+        display: block;
+      }
+      .form-success .check {
+        font-family: var(--f-display);
+        font-size: 36px;
+        color: var(--lime);
+        display: block;
+        margin-bottom: 8px;
+        line-height: 1;
+      }
+
+      /* ============ LOCATION STRIP ============ */
+      .location-strip {
+        background: var(--white);
+        padding: 110px 24px;
+        border-top: 1px solid var(--border);
+      }
+      .location-inner {
+        max-width: 1320px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 70px;
+        align-items: center;
+      }
+      .location-text .eyebrow {
+        font-family: var(--f-display);
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--lime-text);
+        margin-bottom: 20px;
+      }
+      .location-text .eyebrow::before {
+        content: "";
+      }
+      .location-text h3 {
+        font-family: var(--f-display);
+        font-weight: 800;
+        font-size: clamp(40px, 5vw, 68px);
+        text-transform: uppercase;
+        line-height: 0.95;
+        letter-spacing: -0.015em;
+        margin-bottom: 20px;
+      }
+      .location-text h3 .accent {
+        color: var(--ink);
+        font-family: var(--f-edito);
+        font-style: italic;
+        font-weight: 500;
+        letter-spacing: -0.005em;
+        text-transform: none;
         position: relative;
         display: inline-block;
         padding: 0 0.05em;
       }
-      .intro h2 .lime::after {
+      .location-text h3 .accent::after {
         content: "";
         position: absolute;
         left: 0;
@@ -856,137 +1070,61 @@
         z-index: -1;
         opacity: 0.85;
       }
-      .intro-body {
+      .location-text p {
+        font-family: var(--f-body);
         font-size: 17px;
         color: var(--text);
         line-height: 1.7;
+        margin-bottom: 28px;
+        max-width: 480px;
       }
-      .intro-body p + p {
-        margin-top: 18px;
-      }
-      .intro-body .sig {
-        font-family: var(--f-display);
-        font-weight: 600;
-        font-size: 18px;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-        color: var(--ink);
-        margin-top: 28px;
-        display: block;
-      }
-
-      /* ============ CONTACT CTA ============ */
-      .contact-cta {
+      .location-visual {
+        aspect-ratio: 5 / 4;
         background: var(--ink);
-        color: var(--white);
-        padding: 140px 24px;
         position: relative;
         overflow: hidden;
+        background-image: var(--loc-photo);
+        background-size: cover;
+        background-position: center;
+        border-radius: 4px;
       }
-      .contact-cta::before {
+      .location-visual::after {
         content: "";
         position: absolute;
-        right: -200px;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 700px;
-        height: 700px;
-        border: 1.5px solid var(--lime);
-        border-radius: 50%;
-        opacity: 0.22;
-        pointer-events: none;
+        inset: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(175, 214, 57, 0.22),
+          transparent 60%
+        );
       }
-      .contact-cta::after {
-        content: "";
+      .location-visual .pin-card {
         position: absolute;
-        right: -100px;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 500px;
-        height: 500px;
-        border: 1.5px solid var(--lime);
-        border-radius: 50%;
-        opacity: 0.14;
-        pointer-events: none;
-      }
-      .contact-inner {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: 1.4fr 1fr;
-        gap: 80px;
-        align-items: center;
-        position: relative;
-        z-index: 2;
-      }
-      .contact-tag {
-        font-family: var(--f-display);
-        font-size: 14px;
-        font-weight: 600;
-        letter-spacing: 0.25em;
-        text-transform: uppercase;
-        color: var(--lime);
-        margin-bottom: 24px;
-        display: inline-flex;
-        align-items: center;
-        gap: 14px;
-      }
-      .contact-tag::before {
-        content: "";
-        width: 40px;
-        height: 2px;
-        background: var(--lime);
-      }
-      .contact-cta h2 {
-        font-size: clamp(48px, 6.5vw, 104px);
-        margin-bottom: 32px;
-        line-height: 0.92;
-      }
-      .contact-cta h2 .lime {
-        color: var(--lime);
-        font-style: italic;
-      }
-      .contact-text {
-        font-size: 18px;
-        color: var(--paper);
-        opacity: 0.78;
-        line-height: 1.6;
-        margin-bottom: 40px;
-        max-width: 540px;
-      }
-      .contact-actions {
-        display: flex;
-        gap: 16px;
-        flex-wrap: wrap;
-      }
-      .contact-info {
-        display: flex;
-        flex-direction: column;
-        gap: 28px;
-        border-left: 2px solid var(--lime);
-        padding-left: 36px;
-      }
-      .contact-info-item {
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-      }
-      .contact-info-label {
-        font-family: var(--f-display);
-        font-size: 12px;
-        font-weight: 600;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        color: var(--lime);
-      }
-      .contact-info-value {
-        font-family: var(--f-body);
-        font-size: 17px;
-        font-weight: 500;
+        bottom: 28px;
+        left: 28px;
+        background: var(--ink);
         color: var(--white);
+        padding: 18px 22px;
+        z-index: 2;
+        border-radius: 2px;
+        border-left: 3px solid var(--lime);
       }
-      .contact-info-value a:hover {
+      .location-visual .pin-card .pin-label {
+        font-family: var(--f-display);
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.22em;
         color: var(--lime);
+        margin-bottom: 6px;
+        text-transform: uppercase;
+      }
+      .location-visual .pin-card .pin-city {
+        font-family: var(--f-display);
+        font-weight: 800;
+        font-size: 30px;
+        text-transform: uppercase;
+        line-height: 1;
+        letter-spacing: -0.01em;
       }
 
       /* ============ FOOTER ============ */
@@ -1047,7 +1185,7 @@
       .footer-col a {
         font-size: 14px;
         color: var(--paper);
-        opacity: 0.88; /* Avant 0.7, ratio AA OK sur dark */
+        opacity: 0.88;
         transition:
           color 0.2s,
           opacity 0.2s;
@@ -1092,18 +1230,11 @@
 
       /* ============ RESPONSIVE ============ */
       @media (max-width: 1024px) {
-        .intro-inner {
+        .contact-grid {
           grid-template-columns: 1fr;
-          gap: 50px;
+          gap: 60px;
         }
-        .intro-photo {
-          max-width: 480px;
-          margin: 0 auto;
-        }
-        .intro-photo::before {
-          inset: 14px -14px -14px 14px;
-        }
-        .contact-inner {
+        .location-inner {
           grid-template-columns: 1fr;
           gap: 50px;
         }
@@ -1111,18 +1242,8 @@
           grid-template-columns: 1fr 1fr;
           gap: 40px;
         }
-        .hero-stats {
-          grid-template-columns: repeat(2, 1fr);
-          gap: 28px;
-        }
-        .hero-blocks-solo {
-          grid-template-columns: 1fr;
-          max-width: 620px;
-          gap: 18px;
-        }
-        .hero-blocks-solo .hero-block {
-          min-height: 220px;
-          padding: 36px 32px 32px;
+        .contact-form-wrap {
+          padding: 48px 40px;
         }
       }
       @media (max-width: 900px) {
@@ -1136,13 +1257,16 @@
         }
         .nav-links {
           display: none;
-        } /* Liens texte planqués sur tablette/mobile */
+        }
         .nav-cta-diadem {
           display: none;
-        } /* Diadem bascule dans le menu déroulant */
+        }
         .nav-toggle {
           display: block;
-        } /* Hamburger visible */
+        }
+        .page-header {
+          padding: 90px 24px 70px;
+        }
       }
       @media (max-width: 720px) {
         .promo-inner {
@@ -1156,39 +1280,51 @@
           font-size: 11px;
           padding: 4px 10px;
         }
-        .hero-blocks {
-          grid-template-columns: 1fr;
-        }
-        .hero-blocks-solo .hero-block {
-          padding: 40px 28px 36px;
-          min-height: 220px;
-        }
         .nav-cta .btn {
           padding: 9px 12px;
           font-size: 12px;
         }
         .nav-cta .btn .arrow {
           display: none;
-        } /* Gagne de la place sur mobile */
+        }
         .hide-sm {
           display: none;
-        } /* Raccourcit "Produits Diadem" → "Diadem" */
-        .hero {
-          padding: 60px 24px 50px;
         }
-        .hero-stats {
-          grid-template-columns: repeat(2, 1fr);
-          gap: 24px;
+        .logo-img {
+          height: 56px;
         }
-        .intro,
-        .contact-cta {
-          padding: 80px 24px;
+        .page-header {
+          padding: 70px 20px 60px;
+        }
+        .contact-section,
+        .location-strip {
+          padding: 70px 20px;
+        }
+        .contact-form-wrap {
+          padding: 40px 24px;
+        }
+        .form-row {
+          grid-template-columns: 1fr;
+        }
+        .form-actions {
+          flex-direction: column;
+          align-items: stretch;
+        }
+        .form-submit {
+          justify-content: center;
+        }
+        .form-note {
+          text-align: center;
         }
         .footer-grid {
           grid-template-columns: 1fr;
         }
-        .logo-img {
-          height: 56px;
+        .contact-blocks .contact-block {
+          grid-template-columns: 24px 1fr;
+          gap: 14px;
+        }
+        .contact-block .value {
+          font-size: 19px;
         }
       }
 
@@ -1236,7 +1372,7 @@
           ><strong>Séjour pickleball</strong> · 30 juin 2026 ·
           <span class="f-edito">Côte d'Azur</span></span
         >
-        <a href="contact.html" class="promo-link"
+        <a href="#contact-form" class="promo-link"
           >Réserver<span class="arrow" aria-hidden="true">→</span></a
         >
       </div>
@@ -1253,9 +1389,9 @@
           <img src="assets/logo-platel-corp-new.jpeg" alt="" class="logo-img" />
         </a>
         <div class="nav-links">
-          <a href="index.html" aria-current="page">Accueil</a>
-          <a href="coaching.html">Coachings</a>
-          <a href="#evenements">Organisation d'événements</a>
+          <a href="index.html">Accueil</a>
+          <a href="index.html#coaching">Coachings</a>
+          <a href="index.html#evenements">Organisation d'événements</a>
         </div>
         <div class="nav-cta">
           <a
@@ -1265,8 +1401,9 @@
             class="btn btn-diadem nav-cta-diadem"
             ><span class="hide-sm">Produits </span>Diadem</a
           >
-          <a href="contact.html" class="btn btn-lime"
-            >Contactez-nous <span class="arrow" aria-hidden="true">→</span></a
+          <a href="mailto:platelcorporation@gmail.com" class="btn btn-lime"
+            ><span class="hide-sm">Email </span>direct
+            <span class="arrow" aria-hidden="true">→</span></a
           >
           <button
             type="button"
@@ -1286,13 +1423,13 @@
         class="nav-mobile-menu"
         aria-label="Menu mobile"
       >
-        <a href="index.html" class="nav-mobile-link" aria-current="page"
+        <a href="index.html" class="nav-mobile-link"
           >Accueil <span class="arrow" aria-hidden="true">→</span></a
         >
-        <a href="coaching.html" class="nav-mobile-link"
+        <a href="index.html#coaching" class="nav-mobile-link"
           >Coachings <span class="arrow" aria-hidden="true">→</span></a
         >
-        <a href="#evenements" class="nav-mobile-link"
+        <a href="index.html#evenements" class="nav-mobile-link"
           >Organisation d'événements
           <span class="arrow" aria-hidden="true">→</span></a
         >
@@ -1307,141 +1444,210 @@
     </nav>
 
     <main id="main">
-      <!-- ===== HERO ===== -->
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-inner">
-          <h1 id="hero-title" class="sr-only">
-            Platel Corporation, Coaching, Événements et Diadem France, à Nice.
+      <!-- ===== PAGE HEADER ===== -->
+      <section
+        class="page-header"
+        aria-labelledby="page-title"
+        style="
+          --ph-photo: url(&quot;assets/%C2%A9-ROMAIN-BODEREAU_SL-PICKLEBALL-527-1-1024x683.jpg&quot;);
+        "
+      >
+        <div class="page-header-bg" aria-hidden="true"></div>
+        <div class="page-header-inner">
+          <nav class="breadcrumb" aria-label="Fil d'Ariane">
+            <a href="index.html">Accueil</a
+            ><span class="sep" aria-hidden="true">/</span><span>Contact</span>
+          </nav>
+          <div class="page-eyebrow">Parlons projet</div>
+          <h1 id="page-title" class="page-title">
+            On en <span class="accent">parle ?</span>
           </h1>
-          <div class="hero-blocks hero-blocks-solo">
-            <a
-              id="coaching"
-              href="coaching.html"
-              class="hero-block hb-photo"
-              style="
-                --hb-photo: url(&quot;../assets/1000026709-1-682x1024.jpg&quot;);
-              "
-            >
-              <div class="hero-block-head">
-                <span class="hero-block-num">01</span>
-              </div>
-              <h2>Coachings</h2>
-              <p>
-                Cours particuliers, stages et préparation à la compétition.
-                Pickleball, tous niveaux, à Nice et alentours.
-              </p>
-            </a>
-            <a
-              id="evenements"
-              href="#contact"
-              class="hero-block hb-photo"
-              style="
-                --hb-photo: url(&quot;../assets/%C2%A9-ROMAIN-BODEREAU_SL-PICKLEBALL-527-1-1024x683.jpg&quot;);
-              "
-            >
-              <div class="hero-block-head">
-                <span class="hero-block-num">02</span>
-              </div>
-              <h2>Organisation d'événements</h2>
-              <p>
-                Séjours pickleball <span class="f-edito">Côte d'Azur</span>,
-                tournois, animations clubs et journées corporate, clés en main,
-                du brief au podium.
-              </p>
-            </a>
-            <a
-              href="https://diademsports.com"
-              target="_blank"
-              rel="noopener"
-              class="hero-block hero-block-diadem hb-photo"
-              style="
-                --hb-photo: url(&quot;assets/Edge_Blucore_Lifestyle-4913.webp&quot;);
-              "
-            >
-              <div class="hero-block-head">
-                <span class="hero-block-num">03</span>
-              </div>
-              <h2>Produits Diadem</h2>
-              <span class="hero-block-eyebrow">Diadem Sports · USA</span>
-              <p>
-                Paddles, raquettes &amp; accessoires haut de gamme. Distributeur
-                exclusif France &amp; Monaco de la marque US.
-              </p>
-            </a>
-          </div>
+          <p class="page-lead">
+            Un cours, un séjour à organiser, une question sur un produit Diadem,
+            une demande presse ou simplement envie d'échanger pickleball,
+            écrivez-nous, on répond vite.
+          </p>
         </div>
       </section>
 
-      <!-- ===== INTRO ===== -->
-      <section class="intro">
-        <div class="intro-inner">
-          <div
-            class="intro-photo"
-            role="img"
-            aria-label="Julien Platel, fondateur de Platel Corporation"
-            style="
-              background-image: url(&quot;../assets/%C2%A9-ROMAIN-BODEREAU_SL-PICKLEBALL-288-scaled-rk0v08mm8m3vxd4cdf1vo5huto2756i5b8uou58utw.jpg&quot;);
-            "
-          ></div>
-          <div class="intro-text">
-            <div class="intro-tag">À propos</div>
-            <h2>Une <span class="lime">passion</span>, plusieurs métiers.</h2>
-            <div class="intro-body">
-              <p>
-                Platel Corporation, c'est l'aventure de Julien Platel,
-                pickleballeur de haut niveau basé à Nice et au service des
-                joueurs de toute la France.
-              </p>
-              <p>
-                Du coaching individuel à l'organisation d'événements premium, en
-                passant par la distribution exclusive des produits Diadem, on
-                construit un écosystème complet pour les passionnés exigeants.
-              </p>
-              <span class="sig">Julien Platel, Nice (06)</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ===== CONTACT CTA ===== -->
-      <section class="contact-cta" id="contact">
-        <div class="contact-inner">
-          <div>
-            <div class="contact-tag">Contact</div>
+      <!-- ===== CONTACT SECTION ===== -->
+      <section class="contact-section">
+        <div class="contact-grid">
+          <div class="contact-info-block reveal">
+            <div class="section-num">01, Où nous joindre</div>
             <h2>
-              On échange ?<br /><span class="lime">Quand vous voulez.</span>
+              Directement,<br />par <span class="accent">tous les moyens</span>
             </h2>
-            <p class="contact-text">
-              Un cours, un événement à organiser, un produit à choisir ?
-              Écris-nous, on répond sous 24h ouvrées.
+            <p class="lead">
+              Platel Corporation, c'est une petite équipe basée à Nice. On lit
+              chaque message, et on répond personnellement, en général sous 48h
+              ouvrées.
             </p>
-            <div class="contact-actions">
-              <a href="contact.html" class="btn btn-lime"
-                >Contactez-nous
-                <span class="arrow" aria-hidden="true">→</span></a
-              >
+
+            <div class="contact-blocks">
+              <div class="contact-block">
+                <div class="icon" aria-hidden="true">✉</div>
+                <div>
+                  <div class="label">Email</div>
+                  <div class="value">
+                    <a href="mailto:platelcorporation@gmail.com"
+                      >platelcorporation@gmail.com</a
+                    >
+                  </div>
+                  <div class="sub">
+                    Le canal le plus rapide pour toute demande.
+                  </div>
+                </div>
+              </div>
+              <div class="contact-block">
+                <div class="icon" aria-hidden="true">☎</div>
+                <div>
+                  <div class="label">Téléphone</div>
+                  <!-- TODO Julien : numéro à confirmer avant activation du lien tel: -->
+                  <div class="value">+33 (0)0 00 00 00 00</div>
+                  <div class="sub">Du lundi au vendredi, 9h, 18h.</div>
+                </div>
+              </div>
+              <div class="contact-block">
+                <div class="icon" aria-hidden="true">◉</div>
+                <div>
+                  <div class="label">Localisation</div>
+                  <div class="value">Nice<br />Côte d'Azur · France</div>
+                  <div class="sub">Rendez-vous sur demande.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-socials">
+              <div class="label">Suivre Platel Corporation</div>
+              <div class="links">
+                <a href="#" aria-label="Instagram">Instagram</a>
+                <a href="#" aria-label="Facebook">Facebook</a>
+                <a href="#" aria-label="YouTube">YouTube</a>
+              </div>
             </div>
           </div>
-          <div class="contact-info">
-            <div class="contact-info-item">
-              <span class="contact-info-label">Localisation</span>
-              <span class="contact-info-value"
-                >Nice · Côte d'Azur · France</span
-              >
-            </div>
-            <div class="contact-info-item">
-              <span class="contact-info-label">Email</span>
-              <span class="contact-info-value"
-                ><a href="mailto:platelcorporation@gmail.com"
-                  >platelcorporation@gmail.com</a
-                ></span
-              >
-            </div>
-            <div class="contact-info-item">
-              <span class="contact-info-label">Suivez-nous</span>
-              <span class="contact-info-value"
-                >Instagram · Facebook · YouTube</span
-              >
+
+          <div class="contact-form-wrap reveal" id="contact-form">
+            <div class="form-eyebrow">Formulaire</div>
+            <h2 class="form-title">
+              Écrivez-<span class="accent">nous.</span>
+            </h2>
+
+            <form class="contact-form" id="contactForm" novalidate>
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="firstname"
+                    >Prénom <span class="req" aria-hidden="true">*</span></label
+                  >
+                  <input
+                    type="text"
+                    id="firstname"
+                    name="firstname"
+                    placeholder="Julien"
+                    required
+                    autocomplete="given-name"
+                  />
+                </div>
+                <div class="form-field">
+                  <label for="lastname"
+                    >Nom <span class="req" aria-hidden="true">*</span></label
+                  >
+                  <input
+                    type="text"
+                    id="lastname"
+                    name="lastname"
+                    placeholder="Platel"
+                    required
+                    autocomplete="family-name"
+                  />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="email"
+                    >Email <span class="req" aria-hidden="true">*</span></label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="votre@email.fr"
+                    required
+                    autocomplete="email"
+                  />
+                </div>
+                <div class="form-field">
+                  <label for="phone">Téléphone</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="06 12 34 56 78"
+                    autocomplete="tel"
+                  />
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label for="subject"
+                  >Sujet <span class="req" aria-hidden="true">*</span></label
+                >
+                <select id="subject" name="subject" required>
+                  <option value="" disabled selected>
+                    Choisissez un sujet…
+                  </option>
+                  <option value="coaching">Coaching individuel / stage</option>
+                  <option value="evenement">
+                    Événement / séjour pickleball
+                  </option>
+                  <option value="diadem">Question sur un produit Diadem</option>
+                  <option value="club">Partenariat club / corporate</option>
+                  <option value="presse">Presse &amp; médias</option>
+                  <option value="autre">Autre</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label for="message"
+                  >Message <span class="req" aria-hidden="true">*</span></label
+                >
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Racontez-nous ce qui vous amène…"
+                  required
+                ></textarea>
+              </div>
+
+              <label class="form-consent">
+                <input type="checkbox" id="consent" name="consent" required />
+                <span
+                  >J'accepte que Platel Corporation utilise mes données
+                  uniquement pour me recontacter. Vos informations ne sont
+                  jamais partagées. <a href="#">Confidentialité</a></span
+                >
+              </label>
+
+              <div class="form-actions">
+                <button type="submit" class="form-submit">
+                  Envoyer le message
+                  <span class="arrow" aria-hidden="true">→</span>
+                </button>
+                <span class="form-note">Réponse sous 48h ouvrées</span>
+              </div>
+            </form>
+
+            <div
+              class="form-success"
+              id="formSuccess"
+              role="status"
+              aria-live="polite"
+            >
+              <span class="check" aria-hidden="true">✓</span>
+              Merci, votre message est bien parti.<br />On revient vers vous au
+              plus vite.
             </div>
           </div>
         </div>
@@ -1469,8 +1675,8 @@
           <div class="footer-col">
             <h4>Nos univers</h4>
             <ul>
-              <li><a href="#coaching">Coachings</a></li>
-              <li><a href="#evenements">Événements</a></li>
+              <li><a href="index.html#coaching">Coachings</a></li>
+              <li><a href="index.html#evenements">Événements</a></li>
               <li>
                 <a
                   href="https://diademsports.com"
@@ -1484,7 +1690,7 @@
           <div class="footer-col">
             <h4>Pratique</h4>
             <ul>
-              <li><a href="#contact">Contact</a></li>
+              <li><a href="contact.html">Contact</a></li>
               <li class="muted"><span>FAQ</span></li>
               <li class="muted"><span>Tarifs</span></li>
             </ul>
@@ -1545,11 +1751,9 @@
           const expanded = navToggle.getAttribute("aria-expanded") === "true";
           expanded ? closeMenu() : openMenu();
         });
-        // Ferme en cliquant sur un lien
         navMobileMenu
           .querySelectorAll("a")
           .forEach((a) => a.addEventListener("click", closeMenu));
-        // Ferme avec Escape
         document.addEventListener("keydown", (e) => {
           if (
             e.key === "Escape" &&
@@ -1559,10 +1763,25 @@
             navToggle.focus();
           }
         });
-        // Ferme automatiquement si on repasse en desktop
         const mq = window.matchMedia("(min-width: 901px)");
         mq.addEventListener("change", (e) => {
           if (e.matches) closeMenu();
+        });
+      }
+
+      // Form submit, preview front-end uniquement (pas de backend en mockup)
+      const form = document.getElementById("contactForm");
+      const success = document.getElementById("formSuccess");
+      if (form && success) {
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+          }
+          form.style.display = "none";
+          success.classList.add("visible");
+          success.scrollIntoView({ behavior: "smooth", block: "center" });
         });
       }
     </script>
